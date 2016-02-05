@@ -1,0 +1,48 @@
+@shadow: rgba(0, 0, 0, 0.3) 0 1px 4px -1px;
+
+.js-sf-google-maps {
+  line-height: normal;
+}
+
+.gm-control, input.gm-control {
+  font-family: Roboto, Arial;
+  margin: 10px 0 0 0;
+  padding: 8px;
+  border: 0;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: @shadow;
+  &.hide {
+    display: none;
+  }
+}
+
+.gm-button {
+  background-color: #fff;
+  cursor: pointer;
+  color: rgb(86, 86, 86);
+  padding: 8px;
+  font-size: 11px;
+  margin-left: 10px;
+  &:hover {
+    background-color: rgb(235, 235, 235);
+  }
+}
+
+input.pac-input {
+  background-color: #fff;
+  font-size: 11px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  width: 305px;
+  max-width: ~"calc(100% - 173px)";
+  line-height: normal;
+  &:focus {
+    &:not([readonly]) {//more weight selector for to overwrite some frameworks
+      border: 0;
+      box-shadow: @shadow;
+    }
+  }
+}
