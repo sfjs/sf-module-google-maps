@@ -225,7 +225,10 @@ GMaps.prototype.initMaps = function () {
             that.infowindow.open(that.map, placeMarker);
         });
     }
-
+    this.map.addListener('click', function(e) {
+        that.marker.setPosition(e.latLng);
+        that.saveMarkerCoordinates();
+    });
     if (!this.node.offsetHeight) {
         this.onHashChangeBinded = this.onHashChange.bind(this);
         window.addEventListener("hashchange", this.onHashChangeBinded, false);

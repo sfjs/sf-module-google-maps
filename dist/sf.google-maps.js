@@ -1,5 +1,5 @@
 /*!
- * Google Maps wrapper for Spiral and sf.js v0.1.0
+ * Google Maps wrapper for Spiral and sf.js v0.2.0
  * https://github.com/spiral-modules/google-maps/
  * Copyright (c) 2016, Alex Chepura, spiralscout.com
  */
@@ -319,7 +319,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            that.infowindow.open(that.map, placeMarker);
 	        });
 	    }
-	
+	    this.map.addListener('click', function (e) {
+	        that.marker.setPosition(e.latLng);
+	        that.saveMarkerCoordinates();
+	    });
 	    if (!this.node.offsetHeight) {
 	        this.onHashChangeBinded = this.onHashChange.bind(this);
 	        window.addEventListener("hashchange", this.onHashChangeBinded, false);
